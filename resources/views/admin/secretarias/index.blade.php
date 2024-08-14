@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row">
-  <h1>Listado de usuarios</h1>
+  <h1>Listado de secretarias</h1>
 </div>
 
 
@@ -12,10 +12,10 @@
   <div class="col-md-10">
     <div class="card card-outline card-primary">
       <div class="card-header">
-        <h3 class="card-title">Usuarios registrados</h3>
+        <h3 class="card-title">Secretarias registrados</h3>
         <div class="card-tools">
-          <a href="{{url('admin/usuarios/create')}}" class="btn btn-primary">
-            Registrar nuevo usuario
+          <a href="{{url('admin/secretarias/create')}}" class="btn btn-primary">
+            Registrar nueva secretaria
           </a>
         </div>
       </div>
@@ -25,23 +25,28 @@
           <thead class="thead-dark">
             <tr>
               <th scope="col" style="text-align: center;">#</th>
-              <th scope="col" style="text-align: center;">Nombre</th>
+              <th scope="col" style="text-align: center;">Nombres</th>
+              <th scope="col" style="text-align: center;">Apellidos</th>
+              <th scope="col" style="text-align: center;">Curp</th>
+              <th scope="col" style="text-align: center;">Teléfono</th>
+              <th scope="col" style="text-align: center;">Fecha de nacimiento</th>
+              <th scope="col" style="text-align: center;">Dirección</th>
               <th scope="col" style="text-align: center;">Email</th>
               <th scope="col" style="text-align: center;">Acciones</th>
             </tr>
           </thead>
           <tbody>
             <?php $contador = 1; ?>
-            @foreach ($usuarios as $usuario)
+            @foreach ($secretarias as $secreatria)
             <tr>
               <td style="text-align: center;">{{$contador++}}</td>
-              <td style="text-align: center;">{{$usuario -> name}}</td>
-              <td style="text-align: center;">{{$usuario -> email}}</td>
+              <td style="text-align: center;">{{$secreatria -> nombres}}</td>
+              <td style="text-align: center;">{{$secreatria -> apellidos}}</td>
               <td style="text-align: center;">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <a href="{{url('/admin/usuarios/'.$usuario->id)}}" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                  <a href="{{url('/admin/usuarios/'.$usuario->id.'/edit')}}" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                  <a href="{{url('/admin/usuarios/'.$usuario->id.'/confirm-delete')}}" type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                  <a href="{{url('/admin/secretarias/'.$secretaria->id)}}" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                  <a href="{{url('/admin/secretarias/'.$secretaria->id.'/edit')}}" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                  <a href="{{url('/admin/secretarias/'.$secretaria->id.'/confirm-delete')}}" type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                 </div>
               </td>
             </tr>
@@ -59,17 +64,17 @@
 
                 "emptyTable": "No hay información",
 
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Secretarias",
 
-                "infoEmpty": "Mostrando 0 a 0 de 0 Usuarios",
+                "infoEmpty": "Mostrando 0 a 0 de 0 Secretarias",
 
-                "infoFiltered": "(Filtrado de _MAX_ total Usuarios)",
+                "infoFiltered": "(Filtrado de _MAX_ total Secretarias)",
 
                 "infoPostFix": "",
 
                 "thousands": ",",
 
-                "lengthMenu": "Mostrar _MENU_ Usuarios",
+                "lengthMenu": "Mostrar _MENU_ Secretarias",
 
                 "loadingRecords": "Cargando...",
 

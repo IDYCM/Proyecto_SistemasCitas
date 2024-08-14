@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TEETHCHECK</title>
+  <title>Sistema de citas</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -62,8 +62,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="{{url('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <a href="{{url('/admin')}}" class="brand-link">
+        <img src="{{url('dist/img/LogoTeeth.png')}}" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SISTEMA</span>
       </a>
 
@@ -106,8 +106,37 @@
               </ul>
             </li>
 
+
             <li class="nav-item">
-              <a href="#" class="nav-link" style="background-color: red">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas bi bi-briefcase"></i>
+                <p>
+                  Secretarias
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{url('admin/secretarias/create')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Creacion de Secretarias</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{url('admin/secretarias')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lista de Secretarias</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+
+
+
+            <li class="nav-item">
+              <a href="#" class="nav-link active" style="background-color: red">
                 <i class="nav-icon fas bi bi-x-square"></i>
                 <p>
                   Cerrar sesión
